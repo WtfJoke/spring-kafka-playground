@@ -2,12 +2,12 @@ package com.github.wtfjoke.kafkaplayground.messaging
 
 import com.github.wtfjoke.kafkaplayground.data.Movie
 import com.github.wtfjoke.kafkaplayground.data.Show
+import com.github.wtfjoke.kafkaplayground.messaging.config.TopicConfiguration
 import com.github.wtfjoke.kafkaplayground.testcontainers.StartRedPandaBeforeAllExtension
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.kafka.core.KafkaTemplate
 import org.testcontainers.shaded.org.awaitility.Awaitility.await
@@ -24,16 +24,13 @@ class VideoProducerIntegrationRedpandaTest {
     @Autowired
     private lateinit var showProducer: KafkaTemplate<String, Show>
 
-    @Value("\${topics.movie}")
-    private lateinit var movieTopic: String
-
-    @Value("\${topics.show}")
-    private lateinit var showTopic: String
+    @Autowired
+    private lateinit var topics: TopicConfiguration
 
     @Test
     fun givenKafkaDockerContainer_whenSendingtoMovieProducer_thenMessageIsSent() {
-        val send = movieProducer.send(movieTopic, Movie("hiho"))
-        await().atMost(5, TimeUnit.SECONDS).until { send.isDone }
+        val send = movieProducer.send(topics.movie, Movie("hiho"))
+        await().atMost(10, TimeUnit.SECONDS).until { send.isDone }
 
         val result = send.get()
 
@@ -43,8 +40,8 @@ class VideoProducerIntegrationRedpandaTest {
 
     @Test
     fun givenKafkaDockerContainer_whenSendingtoShowProducer_thenMessageIsSent() {
-        val send = showProducer.send(showTopic, Show("hiho"))
-        await().atMost(5, TimeUnit.SECONDS).until { send.isDone }
+        val send = showProducer.send(topics.show, Show("hiho"))
+        await().atMost(10, TimeUnit.SECONDS).until { send.isDone }
 
         val result = send.get()
 
