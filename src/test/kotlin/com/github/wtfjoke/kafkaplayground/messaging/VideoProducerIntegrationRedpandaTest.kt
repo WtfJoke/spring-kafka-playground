@@ -24,12 +24,11 @@ class VideoProducerIntegrationRedpandaTest {
     @Autowired
     private lateinit var showProducer: KafkaTemplate<String, Show>
 
-    @Value("\${movie.topic}")
+    @Value("\${topics.movie}")
     private lateinit var movieTopic: String
 
-    @Value("\${shows.topic}")
+    @Value("\${topics.show}")
     private lateinit var showTopic: String
-
 
     @Test
     fun givenKafkaDockerContainer_whenSendingtoMovieProducer_thenMessageIsSent() {

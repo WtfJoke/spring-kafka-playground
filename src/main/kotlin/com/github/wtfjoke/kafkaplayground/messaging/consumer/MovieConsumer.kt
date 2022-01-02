@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component
 @Component
 class MovieConsumer {
 
-    @KafkaListener(topics = ["\${movie.topic}"], containerFactory = "moviePublishedKafkaListenerContainerFactory")
+    @KafkaListener(topics = ["\${topics.movie}"], containerFactory = "moviePublishedKafkaListenerContainerFactory")
     fun listenToMoviesUpdates(movie: Movie) {
         println("I watched a film: $movie")
     }
