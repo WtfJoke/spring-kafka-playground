@@ -1,6 +1,6 @@
 {
   "name": "Movie",
-  "namespace": "com.example.kafkademoissue.data",
+  "namespace": "com.github.wtfjoke.kafkaplayground.data",
   "type": "record",
   "fields": [
     {
