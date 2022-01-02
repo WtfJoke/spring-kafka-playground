@@ -1,4 +1,4 @@
-package com.example.kafkademoissue.testcontainers
+package com.github.wtfjoke.kafkaplayground.testcontainers
 
 import org.junit.jupiter.api.extension.BeforeAllCallback
 import org.junit.jupiter.api.extension.ExtensionContext

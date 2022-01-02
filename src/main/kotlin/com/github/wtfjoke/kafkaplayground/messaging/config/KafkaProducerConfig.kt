@@ -1,7 +1,7 @@
-package com.example.kafkademoissue.messaging.config
+package com.github.wtfjoke.kafkaplayground.messaging.config
 
-import com.example.kafkademoissue.data.Movie
-import com.example.kafkademoissue.data.Show
+import com.github.wtfjoke.kafkaplayground.data.Movie
+import com.github.wtfjoke.kafkaplayground.data.Show
 import org.apache.kafka.common.serialization.StringSerializer
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties
 import org.springframework.context.annotation.Bean

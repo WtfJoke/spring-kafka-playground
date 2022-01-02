@@ -1,4 +1,4 @@
-package com.example.kafkademoissue
+package com.github.wtfjoke.kafkaplayground
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

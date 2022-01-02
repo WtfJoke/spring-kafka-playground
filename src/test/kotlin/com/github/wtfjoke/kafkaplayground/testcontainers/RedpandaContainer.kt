@@ -1,4 +1,4 @@
-package com.example.kafkademoissue.testcontainers
+package com.github.wtfjoke.kafkaplayground.testcontainers
 
 import com.github.dockerjava.api.command.InspectContainerResponse
 import org.testcontainers.containers.GenericContainer

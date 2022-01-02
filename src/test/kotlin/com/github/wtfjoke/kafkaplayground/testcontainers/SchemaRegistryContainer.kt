@@ -1,4 +1,4 @@
-package com.example.kafkademoissue.testcontainers
+package com.github.wtfjoke.kafkaplayground.testcontainers
 
 import org.testcontainers.containers.GenericContainer
 import org.testcontainers.containers.KafkaContainer

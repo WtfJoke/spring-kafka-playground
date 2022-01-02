@@ -1,6 +1,6 @@
-package com.example.kafkademoissue.messaging.consumer
+package com.github.wtfjoke.kafkaplayground.messaging.consumer
 
-import com.example.kafkademoissue.data.Movie
+import com.github.wtfjoke.kafkaplayground.data.Movie
 import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.stereotype.Component
 

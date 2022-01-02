@@ -1,6 +1,6 @@
-package com.example.kafkademoissue.messaging.publisher
+package com.github.wtfjoke.kafkaplayground.messaging.publisher
 
-import com.example.kafkademoissue.data.Show
+import com.github.wtfjoke.kafkaplayground.data.Show
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.stereotype.Component

@@ -1,9 +1,9 @@
-package com.example.kafkademoissue.web
+package com.github.wtfjoke.kafkaplayground.web
 
-import com.example.kafkademoissue.data.Movie
-import com.example.kafkademoissue.data.Show
-import com.example.kafkademoissue.messaging.publisher.MoviePublisher
-import com.example.kafkademoissue.messaging.publisher.ShowPublisher
+import com.github.wtfjoke.kafkaplayground.data.Movie
+import com.github.wtfjoke.kafkaplayground.data.Show
+import com.github.wtfjoke.kafkaplayground.messaging.publisher.MoviePublisher
+import com.github.wtfjoke.kafkaplayground.messaging.publisher.ShowPublisher
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RestController
 

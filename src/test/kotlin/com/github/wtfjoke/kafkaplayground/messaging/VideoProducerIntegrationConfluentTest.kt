@@ -1,8 +1,8 @@
-package com.example.kafkademoissue.messaging
+package com.github.wtfjoke.kafkaplayground.messaging
 
-import com.example.kafkademoissue.data.Movie
-import com.example.kafkademoissue.data.Show
-import com.example.kafkademoissue.testcontainers.StartRedPandaBeforeAllExtension
+import com.github.wtfjoke.kafkaplayground.data.Movie
+import com.github.wtfjoke.kafkaplayground.data.Show
+import com.github.wtfjoke.kafkaplayground.testcontainers.StartKafkaContainerBeforeAllExtension
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -14,9 +14,9 @@ import org.testcontainers.shaded.org.awaitility.Awaitility.await
 import java.util.concurrent.TimeUnit
 
 
-@ExtendWith(StartRedPandaBeforeAllExtension::class)
+@ExtendWith(StartKafkaContainerBeforeAllExtension::class)
 @SpringBootTest
-class VideoProducerIntegrationRedpandaTest {
+class VideoProducerIntegrationConfluentTest {
 
     @Autowired
     private lateinit var movieProducer: KafkaTemplate<String, Movie>
@@ -29,7 +29,6 @@ class VideoProducerIntegrationRedpandaTest {
 
     @Value("\${shows.topic}")
     private lateinit var showTopic: String
-
 
     @Test
     fun givenKafkaDockerContainer_whenSendingtoMovieProducer_thenMessageIsSent() {

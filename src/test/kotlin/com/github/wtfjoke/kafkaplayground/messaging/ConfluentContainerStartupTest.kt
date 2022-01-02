@@ -1,6 +1,6 @@
-package com.example.kafkademoissue.messaging
+package com.github.wtfjoke.kafkaplayground.messaging
 
-import com.example.kafkademoissue.testcontainers.StartKafkaContainerBeforeAllExtension
+import com.github.wtfjoke.kafkaplayground.testcontainers.StartKafkaContainerBeforeAllExtension
 import org.junit.jupiter.api.Test
 
 class ConfluentContainerStartupTest {

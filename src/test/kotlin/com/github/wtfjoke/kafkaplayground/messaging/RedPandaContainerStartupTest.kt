@@ -1,6 +1,6 @@
-package com.example.kafkademoissue.messaging
+package com.github.wtfjoke.kafkaplayground.messaging
 
-import com.example.kafkademoissue.testcontainers.StartRedPandaBeforeAllExtension
+import com.github.wtfjoke.kafkaplayground.testcontainers.StartRedPandaBeforeAllExtension
 import org.junit.jupiter.api.Test
 
 class RedPandaContainerStartupTest {
