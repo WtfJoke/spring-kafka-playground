@@ -30,7 +30,7 @@ class VideoProducerIntegrationConfluentTest {
     @Test
     fun givenKafkaDockerContainer_whenSendingtoMovieProducer_thenMessageIsSent() {
         val send = movieProducer.send(topics.movie, Movie("hiho"))
-        await().atMost(10, TimeUnit.SECONDS).until { send.isDone }
+        await().atMost(1, TimeUnit.MINUTES).until { send.isDone }
 
         val result = send.get()
 
@@ -41,7 +41,7 @@ class VideoProducerIntegrationConfluentTest {
     @Test
     fun givenKafkaDockerContainer_whenSendingtoShowProducer_thenMessageIsSent() {
         val send = showProducer.send(topics.show, Show("hiho"))
-        await().atMost(10, TimeUnit.SECONDS).until { send.isDone }
+        await().atMost(1, TimeUnit.MINUTES).until { send.isDone }
 
         val result = send.get()
 
